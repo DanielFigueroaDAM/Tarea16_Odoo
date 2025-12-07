@@ -12,7 +12,7 @@
           <group>
             <field name="f_nac" string="Fecha de nacimiento"/>
             <field name="edad" string="Edad"/>
-            <field name="signo_chino" string="Signo del horoscopo Chino"/>
+            <field name="signo_chino" string="Signo del horóscopo Chino"/>
           </group>
       </field>
     </record>
