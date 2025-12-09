@@ -24,7 +24,7 @@
     <record model="ir.ui.view" id="partner_chinese_stats.list">
       <field name="name">partner_chinese_stats list</field>
       <field name="model">res.partner</field>
-      <field name="inherit_id">base.view_partner_tree</field>
+      <field name="inherit_id" ref="base.view_partner_tree"/>
       <field name="arch" type="xml">
         <xpath expr="//list/field[@name='complete_name']" position="after">
           <field name="signo_chino" string="Signo del horóscopo Chino"/>
@@ -32,37 +32,15 @@
       </field>
     </record>
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="partner_chinese_stats.action_server">
-      <field name="name">partner_chinese_stats server</field>
-      <field name="model_id" ref="model_partner_chinese_stats_partner_chinese_stats"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "list,form",
-          "res_model": model._name,
-        }
+    <record model="ir.ui.view" id="partner_chinese_stats.kanban">
+      <field name="name">partner_chinese_stats kanban</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.res_partner_kanban_view"/> 
+      <field name="arch" type="xml">
+        <xpath expr="//div[@class='mb-1']/field[@name='display_name']" position="after">
+          <field name="signo_chino"/>
+        </xpath>
       </field>
     </record>
--->
-
-    <!-- Top menu item -->
-<!--
-    <menuitem name="partner_chinese_stats" id="partner_chinese_stats.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="partner_chinese_stats.menu_1" parent="partner_chinese_stats.menu_root"/>
-    <menuitem name="Menu 2" id="partner_chinese_stats.menu_2" parent="partner_chinese_stats.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="partner_chinese_stats.menu_1_list" parent="partner_chinese_stats.menu_1"
-              action="partner_chinese_stats.action_window"/>
-    <menuitem name="Server to list" id="partner_chinese_stats" parent="partner_chinese_stats.menu_2"
-              action="partner_chinese_stats.action_server"/>
--->
   </data>
 </odoo>
